@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %} detail post {% endblock %}
+{% block content %} 
+ <h1>{{ user.title }}</h1>
+ <p> published {{ user.created }} by {{ user.name }}</p>
+ <p>{{ user.body }}</p>
+ <p> <a href="{% url 'update' pk=user.id %}">Update this post</a></p>
+ <spa><a href="{% url 'delete' pk=user.id %}">Delete this post</a></spa>
+{% endblock %}

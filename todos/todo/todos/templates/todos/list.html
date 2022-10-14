@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}  {% endblock %}
+{% block content %}
+{% for posts in post %}
+  <h2 class="title">
+    <a href="{% url 'detail' posts.id %}">{{ posts.title }}</a>
+  </h2>
+  <p class="date"> published {{ posts.created }} by {{ posts.name }}</p>
+  <p>{{ posts.body|truncatewords:30|linebreaks }}</p>
+{% endfor %}
+{% endblock %}
